@@ -13,5 +13,5 @@ export default function createReportObject(employeesList) {
     },
   };
 
-  return officeReport:
+  return officeReport;
 }
