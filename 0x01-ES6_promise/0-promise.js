@@ -1,7 +1,5 @@
 export function getResponseFromAPI() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
+  return new Promise((resolve) => {
       resolve();
-    });
   });
 }
