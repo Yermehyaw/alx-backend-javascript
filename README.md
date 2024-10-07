@@ -6,3 +6,6 @@ Learning the basics of using the standardized EMCAScript for scripting in JS
 
 ## 0x01-ES6_promise
 Utitlizing promises in asynchronous JS
+
+## 0x03-ES6_data_manipulation
+Mabipualting data streucts in ES6
