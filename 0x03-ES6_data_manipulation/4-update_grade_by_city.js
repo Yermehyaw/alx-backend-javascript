@@ -8,24 +8,16 @@
 export default function updateStudentGradeByCity(students, city, newGrades) {
   // const availableIds = newGrades.map((elem) => elem.studentId);
 
-  let studentWithGrades = students
-        .filter((elem) => city === elem.location)
-        .map((elem) => {
-          const gradeObjOfStudent = newGrades.find((gradeObj) => elem.id === gradeObj.studentId);
-          try {
-            elem.grade = gradeObjOfStudent.grade;
-          } catch(error) {
-            elem.grade = 'N/A';
-          }
+  const studentsWithGrades = students
+    .filter((elem) => city === elem.location)
+    .map((elem) => {
+      const gradeObjOfStudent = newGrades.find((gradeObj) => elem.id === gradeObj.studentId);
 
-          return elem;  // curly braces are used
-        });
+      const studentsCopy = { ...elem };
+      studentsCopy.grade = gradeObjOfStudent ? gradeObjOfStudent.grade : 'N/A';
 
-  studentWithGrades.forEach((elem) => {  // task req; Display the obj with id of 1 in format of one prpty per line
-    if (elem.id === 1) {
-      JSON.stringify(elem, null, 2);
-    }
-  });
+      return studentsCopy;
+    });
 
-  return studentWithGrades;
+  return studentsWithGrades;
 }
