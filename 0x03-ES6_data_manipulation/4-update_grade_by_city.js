@@ -6,17 +6,19 @@
 */
 
 export default function updateStudentGradeByCity(students, city, newGrades) {
-  const availableIds = newGrades.map((elem) => elem.studentId);
+  // const availableIds = newGrades.map((elem) => elem.studentId);
 
-  const studentWithGrades = students
-        .filter((elem) => elem.id in availableIds)
+  let studentWithGrades = students
+        .filter((elem) => city === elem.location)
         .map((elem) => {
-          gradeObjOfStudent = newGrades.find((gradeObj) => elem.id === gradeObj.studentId);
+          const gradeObjOfStudent = newGrades.find((gradeObj) => elem.id === gradeObj.studentId);
           try {
             elem.grade = gradeObjOfStudent.grade;
           } catch(error) {
             elem.grade = 'N/A';
           }
+
+          return elem;  // curly braces are used
         });
 
   studentWithGrades.forEach((elem) => {  // task req; Display the obj with id of 1 in format of one prpty per line
