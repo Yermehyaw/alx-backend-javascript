@@ -7,4 +7,6 @@ interface Teacher<T> {
   value: T;
 }
 
-let anyAttribute: Teacher<any>;
+interface Directors extends Teacher<any> {
+  numberOfReports: number
+}
