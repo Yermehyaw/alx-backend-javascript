@@ -22,7 +22,7 @@ const student_2: Student = {
   location: 'Abuja',
 };
 
-const studentList: array = [student_1, student_2];
+const studentList: Array<Student> = [student_1, student_2];
 
 // Render a table
 const studentTable = document.createElement('table');
@@ -30,8 +30,8 @@ studentList.forEach((student) => {
   const row = studentTable.insertRow();
   const firstNameCol = row.insertCell(0);
   const locationCol = row.insertCell(1);
-  firstNameCol.textContent(student.firstName);
-  locationCol.textContent(student.location);
+  firstNameCol.textContent = student.firstName;
+  locationCol.textContent = student.location;
 });
 
 // Add table to html doc
