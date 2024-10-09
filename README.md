@@ -8,4 +8,7 @@ Learning the basics of using the standardized EMCAScript for scripting in JS
 Utitlizing promises in asynchronous JS
 
 ## 0x03-ES6_data_manipulation
-Mabipualting data streucts in ES6
+Manipulating data streucts in ES6
+
+## 0x04-TypeScript
+Usinf Typescript types(basic and generic), working with DOM, namespaces amd declarations
