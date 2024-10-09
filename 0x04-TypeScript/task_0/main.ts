@@ -2,7 +2,7 @@
  * Creating an interface for a student
  */
 
-Interface Student {
+interface Student {
   firstName: string,
   lastName: string,
   age: number,
