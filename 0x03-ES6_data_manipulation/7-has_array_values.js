@@ -1,10 +1,10 @@
 export default function hasValuesFromArray(set, array) {
-  const booleanArray = array.map((elem) => {
-    set.has(elem);
-  });
+  const newSet = new Set(array);
 
-  if (booleanArray.includes(false))
-    return false;
+  for (const elem of newSet) {
+    if (!(set.has(elem)))
+      return false;
+  }
 
   return true;
 }
