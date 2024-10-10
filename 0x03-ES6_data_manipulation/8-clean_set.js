@@ -5,20 +5,7 @@
 
 export default function cleanSet(set, startString) {
   const stringLength = startString.length;
-  if (stringLength === 0) {
-    return '';
-  }
 
-  // convert set to array
-  const newArray = [...set];
-
-  const elemsWithStartString = newArray
-    .map((elem) => {
-      const stringWithoutStartString = elem.slice(stringLength); // slice from index till end of string
-
-      return stringWithoutStartString;
-    })
-    .reduce((accumulator, currentValue) => accumulator + '-' + currentValue);
-
-  return elemsWithStartString;
+  // Slice from index till end of string
+  return stringLength === 0 ? '' : [...set].map((elem) => elem.slice(stringLength)).join('-');
 }
