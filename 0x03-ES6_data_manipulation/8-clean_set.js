@@ -5,7 +5,14 @@
 
 export default function cleanSet(set, startString) {
   const stringLength = startString.length;
+  if (stringLength === 0) {
+    return '';
+  }
 
-  // Slice from index till end of string
-  return stringLength === 0 ? '' : [...set].map((elem) => elem.slice(stringLength)).join('-');
+  const newArray = [...set];
+
+  return newArray
+    .filter((elem) => startString === elem.slice(0, stringLength))
+    .map((elem) => elem.slice(stringLength))
+    .join('-');
 }
