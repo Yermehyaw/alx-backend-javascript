@@ -56,7 +56,7 @@ function isDirector(employee: Director): boolean {
   return false;
 }
 
-function executeWork(employee: Director): string {
+function executeWork(employee: Director | Teacher): string {
   if (employee instanceof Director ) {
     return employee.workDirectorTasks();
   } else if (employee instanceof Teacher){
@@ -68,7 +68,7 @@ function executeWork(employee: Director): string {
 // part 3
 type Subjects = 'Math' | 'History'; // only Math and History can be init to Subjects obj
 
-function teachClass(todayClass): string {
+function teachClass(todayClass: string): string {
   if (todayClass === 'Math') {
     return 'Teaching Math';
   } else if (todayClass === 'History') {
