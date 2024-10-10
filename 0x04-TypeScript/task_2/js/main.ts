@@ -63,3 +63,16 @@ function executeWork(employee: Director): string {
     return employee.workTeacherTasks();
   }
 }
+
+
+// part 3
+type Subjects = 'Math' | 'History'; // only Math and History can be init to Subjects obj
+
+function teachClass(todayClass): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+}
+
