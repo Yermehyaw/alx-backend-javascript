@@ -3,13 +3,16 @@
 import { RowID, RowElement } from './interface.ts';
 import * as CRUD from './crud.js';
 
-row: RowElement {
-  firstName: Guillaume,
-  lastName: Salva,
-}
+const row: RowElement = {
+  firstName: "Guillaume",
+  lastName: "Salva",
+};
 
-const newRowID: RowID = CRUD.insertRow(7) // 7 is just a placeholder for terinsl exec
+const newRowID: RowID = CRUD.insertRow(row);
 
-const newRowID: RowID = CRUD.updateRow(700, 7); // update row 7
+const updatedRow: RowElement = row; // create row replica with age property
+updatedRow.age = 23;
 
-const newRowID: RowID = CRUD.deleteRow(7)
+const updatedRowID = CRUD.updateRow(newRowID, updatedRow); // update row at newRowID with the properties of updateRow, returns newRowID
+
+CRUD.deleteRow(updatedRowID); // deletes both updatedRow and row
