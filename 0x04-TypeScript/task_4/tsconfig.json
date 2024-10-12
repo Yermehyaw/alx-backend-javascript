@@ -5,8 +5,6 @@
     "noImplicitAny": true,
     "module": "es6",
     "target": "es5",
-    "noEmit": false,
-    "allowImportingTsExtensions": true,
     "allowJs": true,
     "moduleResolution": "node",
         "skipLibCheck": true
