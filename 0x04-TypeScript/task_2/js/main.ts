@@ -75,4 +75,3 @@ function teachClass(todayClass: string): string {
     return 'Teaching History';
   }
 }
-

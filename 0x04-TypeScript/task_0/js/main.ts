@@ -36,4 +36,3 @@ studentList.forEach((student) => {
 
 // Add table to html doc
 document.body.appendChild(studentTable);
-
