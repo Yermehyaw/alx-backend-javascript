@@ -4,8 +4,8 @@
  */
 
 
-function displayMessage() {
-  console.log('Hello NodeJS!');
+function displayMessage(greet) {
+  console.log(greet);
 }
 
 module.exports = displayMessage;
