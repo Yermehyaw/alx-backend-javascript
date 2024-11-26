@@ -3,8 +3,7 @@
  *
  */
 
-
-function displayMessage(greet) {
+function displayMessage (greet) {
   console.log(greet);
 }
 
