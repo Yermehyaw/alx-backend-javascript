@@ -12,10 +12,11 @@ process.stdin.setEncoding('utf-8');
 // Print user's name
 process.stdin.on('data', (name) => {
   process.stdout.write('Your name is: ' + name.trim() + '\n');
+  if (process.stdin.isTTY) {
+    process.exit(0);
+  }
 });
 
 process.stdin.on('end', () => {
-  if (!process.stdin.isTTY) {
-    process.stdout.write('This important software is now closing' + '\n');
-  }
+  process.stdout.write('This important software is now closing' + '\n');
 });
