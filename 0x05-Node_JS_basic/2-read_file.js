@@ -1,10 +1,9 @@
 /**
  * Receive input data and parse synchrnously
  */
+const fs = require('fs');
+
 const countStudents = (filePath) => {
-
-  const fs = require('fs');
-
   try {
     // Open file
     const fd = fs.openSync(filePath, 'r');
@@ -16,14 +15,14 @@ const countStudents = (filePath) => {
     const dataArr = buffer.toString('utf8', 0, bytesRead).trim().split('\n');
     const noStudents = dataArr.length - 1;
     const csStudents = [];
-  const sweStudents = [];
+    const sweStudents = [];
 
     for (let idx = 1; idx < dataArr.length; idx += 1) {
       const studentDetails = dataArr[idx].split(',');
       if (studentDetails[3] === 'CS') {
-	csStudents.push(studentDetails[0]);
+        csStudents.push(studentDetails[0]);
       } else if (studentDetails[3] === 'SWE') {
-	sweStudents.push(studentDetails[0]);
+        sweStudents.push(studentDetails[0]);
       }
     }
 
@@ -35,7 +34,7 @@ const countStudents = (filePath) => {
     // Close file after reading
     fs.closeSync(fd);
   } catch (err) {
-    throw new Error(`Cannot load the database`);
+    throw new Error('Cannot load the database');
   }
 };
 
