@@ -22,7 +22,7 @@ fs.readFile(dbName, (err, fd) => {
   const csStudents = [];
   const sweStudents = [];
 
-  for (const idx in dataArr) {
+  for (let idx = 1; idx < dataArr; idx += 1) {
     const studentDetails = dataArr[idx].split(',');
     if (studentDetails[3] === 'CS') {
       csStudents.push(studentDetails[0]);
