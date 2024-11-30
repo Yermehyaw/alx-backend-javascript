@@ -2,7 +2,7 @@
  * Receive input data and parse synchrnously
  */
 const countStudents = (filePath) => {
-  
+
   const fs = require('fs');
 
   try {
@@ -13,7 +13,7 @@ const countStudents = (filePath) => {
     const buffer = Buffer.alloc(250); // create buffer for read storage
     const bytesRead = fs.readSync(fd, buffer, 0, buffer.length, 0);
     // parse the read data stored in buffer
-    const dataArr = buffer.toString('utf8', 0, bytesRead).split('\n');
+    const dataArr = buffer.toString('utf8', 0, bytesRead).trim().split('\n');
     const noStudents = dataArr.length - 1;
     const csStudents = [];
   const sweStudents = [];
