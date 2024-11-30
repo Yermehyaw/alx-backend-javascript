@@ -27,7 +27,7 @@ const countStudents = (filePath) => {
     }
 
     // print parsed data
-    console.log(`No of students: ${noStudents}`);
+    console.log(`Number of students: ${noStudents}`);
     console.log(`Number of students in CS: ${csStudents.length}. List: ${csStudents.join(', ')}`);
     console.log(`Number of students in SWE: ${sweStudents.length}. List: ${sweStudents.join(', ')}`);
 
