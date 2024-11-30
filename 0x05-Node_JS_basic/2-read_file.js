@@ -20,7 +20,7 @@ try {
   // parse the read data stored in buffer
   const dataArr = buffer.toString('utf8', 0, bytesRead).split('\n');
   for (const data in dataArr) {
-    const noStudents = dataArr.length - 1
+//    const noStudents = dataArr.length - 1
     condole.log()
   }
   console.log(dataArr)
@@ -29,6 +29,6 @@ try {
   fs.closeSync(fd);
 
 } catch(err) {
-  throw new Error('Cannot load the database');
+  throw new Error(`Cannot load the database: ${err}`);
 }
 
