@@ -10,7 +10,7 @@ const dbName = process.argv[2];
 // Middleware to handle db operation
 const countStudents = async (req, res, next) => {
   if (!dbName) {
-    res.send('This is the list of our students');
+    res.send('This is the list of our students\nCannot load the database');
   } else {
     try {
       const data = await fs.readFile(dbName, 'utf-8');
@@ -31,7 +31,7 @@ const countStudents = async (req, res, next) => {
           sweStudents.push(studentDetails[0]);
         }
       }
-      const response = `This is a list of our students\nNumber of students: ${noStudents}\nNumber of students in CS: ${csStudents.length}. List: ${csStudents.join(', ')}\nNumber of students in SWE: ${sweStudents.length}. List: ${sweStudents.join(', ')}`;
+      const response = `This is the list of our students\nNumber of students: ${noStudents}\nNumber of students in CS: ${csStudents.length}. List: ${csStudents.join(', ')}\nNumber of students in SWE: ${sweStudents.length}. List: ${sweStudents.join(', ')}`;
       res.send(response);
     } catch (error) {
       console.log(error);
@@ -44,7 +44,7 @@ const countStudents = async (req, res, next) => {
 // Express app
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello ALX!');
+  res.send('Hello Holberton School!');
 });
 
 app.use('/students', countStudents);
