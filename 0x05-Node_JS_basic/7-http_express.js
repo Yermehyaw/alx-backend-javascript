@@ -9,7 +9,7 @@ const dbName = process.argv[2];
 
 // Middleware to handle db operation
 const countStudents = async (req, res, next) => {
-  if (!dbName) {
+  if (!dbName || dbName !== 'database.csv') {
     res.send('This is the list of our students\nCannot load the database');
   } else {
     try {
