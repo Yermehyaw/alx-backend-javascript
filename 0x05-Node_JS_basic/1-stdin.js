@@ -11,7 +11,7 @@ process.stdin.setEncoding('utf-8');
 
 // Print user's name
 process.stdin.on('data', (name) => {
-  process.stdout.write('Your name is: ' + name);
+  process.stdout.write(`Your name is: ${name}`);
   if (process.stdin.isTTY) {
     process.exit(0);
   }
